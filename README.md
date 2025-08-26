@@ -45,12 +45,14 @@ source .arhf-venv/bin/activate
 
 ## Usage
 
-To run the tool, execute the `main.py` file.
+Run the tool via:
+```
+python main.py
+```
 
-The generation program is available in the directory: `Crosshair\Programs\`
+- Generated programs are saved under: `Crosshair/Programs/`
 
-Create `.env` file to store your API and Flask keys, follow the `.env.example` to get the exact structure of the file.
-
+- Create a `.env` file to store your API keys and Flask secrets (use `.env.example` as a template).
 
 ## Project
 
@@ -63,11 +65,11 @@ The doctests act as clarifying questions, users can either 'accept' the doctest,
 Using these corrected doctests, we ask the LLM to update the code to adhere to the doctests. A loop has been setup where we retry to get the LLM to generate the desired interpretation till the time it does or it hits an upper bound of number of retries (Number used in paper: 1).
 
 > [!WARNING]  
-> You will notice the existence of a 'refute' button in the workflow of the tool. The part is still a work in progress and not part of the architecture presented in our paper.
+> The "refute" button workflow (shown after the tool provides the user with the generated code) is still under development and is not part of the architecture described in the paper.
 
 ## Citation
 
-If you use this work, please cite it as:
+If you use or reference this work in your research, please cite it as:
 
 ``` bibtex
  @inproceedings{nandankumarahrf,
