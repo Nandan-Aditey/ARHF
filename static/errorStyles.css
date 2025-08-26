@@ -1,0 +1,57 @@
+/* Base styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9fb;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Main container */
+.failedContainer {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+/* Heading */
+.failedHeading {
+    font-size: 1.8rem;
+    color: #d32f2f;
+    margin-bottom: 1rem;
+}
+
+/* Error message */
+.errorMessage {
+    font-size: 1rem;
+    color: #555;
+    background: #fce4ec;
+    border-left: 5px solid #d32f2f;
+    padding: 12px 20px;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    text-align: left;
+}
+
+/* Try again button */
+.tryAgainButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.tryAgainButton:hover {
+    background: #1565c0;
+}

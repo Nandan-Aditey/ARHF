@@ -1,0 +1,112 @@
+<!-- 
+Module Name: Home Page
+Purpose: HTML template for the starting page, for function signature and doctests
+
+Date: 24 December 2024
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValiGen | the coding tool for you</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fnInput = document.getElementById('function_name');
+        const doctestPrompt = document.querySelector('.doctestPrompt');
+    
+        fnInput.addEventListener('input', function () {
+            doctestPrompt.textContent = `>>> ${fnInput.value || 'function_name'}`;
+        });
+    });
+    </script>
+
+
+<body>
+    <div class="dot-container"></div>
+    <div class="heading">
+        <h1>Specify the function you want</h1>
+    </div>
+    <form action="/suggestedDoctests" method="post" id="functionForm">
+        <input type="hidden" id="number_of_arguments" name="number_of_arguments" value="0">
+        <input type="hidden" id="number_of_return_types" name="number_of_return_types" value="1">
+        <input type="hidden" id="number_of_doctests" name="number_of_doctests" value="1">
+        <div class="mainContainer">
+            <div class="signatureContainer">
+                <div class="sigLeftSection">
+                    Function <br> Signature
+                </div>
+                <div class="sigRightSection">
+                    <div class="functionName">
+                        <label for="function_name">Function Name</label> <br>
+                        <input type="text" id="function_name" name="function_name" placeholder="add_integers"><br>
+                    </div>
+                    <div class="argsReturns">
+                        <div class="args">
+                            <label for="argsCount">Number of Arguments</label> <br>
+                            <select id="argsCount" class="styledDropdown">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                            <br><br>
+                            <span id="titleFunctionArguments">Function Arguments</span> <br>
+                            <div id="argsContainer" class="scrollar">
+                            </div>
+                        </div>
+                        <div class="returns">
+                            <label for="returnType">Return Type</label> <br>
+                            <input type="text" id="returnType" name="return_1" placeholder="type">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="docstrings">
+                <label for="docstring">Docstring</label> <br>
+                <textarea type="text" name="docstring" placeholder="Adds two given integers"></textarea>
+            </div>
+            <div class="doctest">
+                <label for="doctestsCount">Number of Doctests</label> <br>
+                <select id="doctestsCount" class="styledDropdown">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <br><br>
+                <span id="titleDoctests">Doctests</span> <br>
+                <div id="doctestsContainer" class="scrollar">
+                    <div class="doctestBox" style="margin-bottom: 10px;">
+                        <div class="doctestLine">
+                            <span class="doctestFunctionName">>>> {{ function_name }}</span>
+                            <input type="text" name="doctest_1" class="doctestInput" placeholder="(type)">
+                        </div>
+                        <input type="text" name="output_1" class="doctestOutput" placeholder="type">
+                    </div>
+                </div>                
+            </div>
+            <div class="submitButtons">
+                <input type="submit" value="Verify Doctests" class="leftButton">
+                <button type="button" class="rightButton" onclick="clearSelection()">Clear Selection</button>
+            </div>
+        </div>
+    </form>
+    <div class="spacer"></div>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>

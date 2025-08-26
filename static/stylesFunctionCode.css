@@ -1,0 +1,145 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f9f9f9;
+    color: #2c3e50;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+/* Decorative background (optional) */
+.dot-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    background: url('dots.png') repeat center center;
+    opacity: 0.06;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #1a252f;
+}
+
+/* Code Container */
+.codeContainer {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 960px;
+    margin: 0 auto 40px auto;
+    overflow-x: auto;
+    border: 1px solid #e1e1e1;
+}
+
+/* Header row: language and copy button */
+.containerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.copyButton {
+    padding: 6px 14px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copyButton:hover {
+    background-color: #3498db;
+}
+
+/* Code area */
+.codeArea {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f5f7fa;
+    color: #2c3e50;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 1rem;
+    white-space: pre-wrap;
+}
+
+/* Button container */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.goBackButton,
+.refuteButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.goBackButton {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+}
+
+.goBackButton:hover {
+    background-color: #95a5a6;
+}
+
+.refuteButton {
+    background-color: #6366f1;
+    color: white;
+}
+
+.refuteButton:hover {
+    background-color: #4648cb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .codeContainer {
+        padding: 20px;
+    }
+
+    .heading h1 {
+        font-size: 1.6rem;
+    }
+
+    .copyButton {
+        font-size: 0.85rem;
+    }
+
+    .codeArea {
+        font-size: 0.95rem;
+    }
+}

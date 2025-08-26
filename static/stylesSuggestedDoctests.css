@@ -1,0 +1,191 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #F5F5F5;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.dot-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    background: url('dots.png') repeat center center;
+    opacity: 0.1;
+}
+
+/* Heading Section */
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Container for the Doctests */
+.suggestedDoctestsContainer {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#titleSuggestedDoctests {
+    font-size: 1.4rem;
+    color: #34495e;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Individual Doctests */
+.doctestShower {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.doctest {
+    flex-grow: 1;
+}
+
+.doctest span {
+    display: block;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* Preserve Space in Expected Output */
+.preserve-space {
+    white-space: pre-wrap;
+}
+
+/* Action Container for Accept/Reject */
+.actionContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between elements */
+    margin-top: 10px;
+}
+
+.acceptInput,
+.rejectInput,
+.rejectBox {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+.titleAccept,
+.titleReject {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.titleAccept {
+    color: #2980b9;
+}
+
+.titleReject {
+    color: #e74c3c;
+}
+
+/* Increased size for Reject box */
+.rejectBox input[type="text"] {
+    padding: 8px;
+    font-size: 1rem;
+    width: 300px;  /* Increase the width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+input[type="text"].rejectReason {
+    border-color: #e74c3c;
+}
+
+/* Expected Output Field */
+.enterExpectedValue input {
+    padding: 8px;
+    font-size: 1rem;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: none;
+}
+
+input[type="text"].rejectReason {
+    border-color: #e74c3c;
+}
+
+/* Submit Button */
+.submitButton {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submitButton input {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton input:hover {
+    background-color: #3498db;
+}
+
+/* Spacer */
+.spacer {
+    height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .suggestedDoctestsContainer {
+        padding: 20px;
+    }
+
+    .doctestShower {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .actionContainer {
+        flex-direction: column;
+    }
+}

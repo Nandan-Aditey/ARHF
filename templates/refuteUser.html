@@ -1,0 +1,66 @@
+<!-- 
+Module Name: Refute Page
+Purpose: User to add doctests to refute the function code
+
+Developed by: Aditey Nandan
+Date: 6 May 2025
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styleRefuteUser.css">
+</head>
+
+<h2 id="titleDoctests">Doctests</h2>
+
+
+<body>
+    
+    <form action="/refuteCode" method="post" id="functionForm">
+        <div class="mainContainer">
+            <div class="doctest">
+                <label for="doctestsCount">Number of Doctests</label> <br>
+                <select id="doctestsCount" class="styledDropdown">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="hidden" name="number_of_doctests" id="numberOfDoctestsInput" value="1">
+                <br><br>
+                <span id="titleDoctests">Doctests</span> <br>
+                <div id="doctestsContainer" class="scrollar" data-function-name="{{ function_name }}">
+                    <div class="doctestBox">
+                        <span class="doctestFunction"><strong>>>> {{ function_name }}</strong></span><br>
+                        <input type="text" name="doctest_1" class="styledInput doctestInput" placeholder="(type)"><br>
+                        <input type="text" name="output_1" class="styledInput doctestOutput" placeholder="type"><br>
+                    </div>
+                </div>
+            </div>
+            <div class="submitButtons">
+                <input type="submit" value="Verify Doctests" class="leftButton">
+                <button type="button" class="rightButton" onclick="clearSelection()">Clear Selection</button>
+            </div>
+        </div>
+    </form>
+    <div class="spacer"></div>
+    <script src="/static/scriptRefuteUser.js"></script>
+    <script>
+        const doctestsCount = document.getElementById("doctestsCount");
+        const hiddenInput = document.getElementById("numberOfDoctestsInput");
+    
+        doctestsCount.addEventListener("change", function () {
+            hiddenInput.value = this.value;
+        });
+    </script>
+</body>
+</html>

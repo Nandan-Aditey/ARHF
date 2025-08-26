@@ -1,0 +1,901 @@
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Heading */
+.heading h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Main layout */
+.mainContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Signature Container */
+.signatureContainer {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.sigLeftSection {
+    width: 200px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-right: 20px;
+}
+
+.sigRightSection {
+    flex: 1;
+}
+
+.functionName input,
+.returns input,
+.styledInput {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+/* Args and Returns Layout */
+.argsReturns {
+    display: flex;
+    gap: 40px;
+}
+
+.args, .returns {
+    flex: 1;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/* Scroll containers */
+.scrollar {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 5px 0;
+}
+
+/* Dropdowns */
+.styledDropdown {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 1rem;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+/* Doctests */
+.doctestBox {
+    background-color: #f1f1f1;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#doctestFunctionName {
+    display: inline-block;
+    font-family: monospace;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.doctestInput,
+.doctestOutput {
+    width: calc(100% - 20px);
+    margin: 5px 0;
+    padding: 8px;
+    font-family: monospace;
+}
+
+/* Buttons */
+.submitButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.leftButton,
+.rightButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.leftButton {
+    background-color: #4caf50;
+    color: white;
+}
+
+.leftButton:hover {
+    background-color: #45a045;
+}
+
+.rightButton {
+    background-color: #f44336;
+    color: white;
+}
+
+.rightButton:hover {
+    background-color: #d6362a;
+}
+
+.spacer {
+    height: 60px;
+}
+
+/* Dot container (empty placeholder) */
+.dot-container {
+    display: none;
+}
+
+#titleFunctionArguments,
+#docstring {
+    font-weight: bold;
+    font-size: 1em; /* optional: slightly larger */
+}
+
+
+/* Code area styles */
+
+input[type="text"], select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: #6366f1; /* soft blue */
+    outline: none;
+}
+
+.leftButton, .rightButton {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.leftButton {
+    background-color: #6366f1;
+    color: white;
+}
+
+.leftButton:hover {
+    background-color: #4f46e5;
+}
+
+.rightButton {
+    background-color: #f3f4f6;
+    color: #111;
+}
+
+.rightButton:hover {
+    background-color: #e5e7eb;
+}
+
+
+.mainContainer {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.signatureContainer, .doctest, .docstrings {
+    margin-bottom: 24px;
+}
+
+.doctestBox {
+    background: #f1f1f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.heading h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.doctestLine {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: monospace;
+}
+
+.inlineArg {
+    width: 60px;
+    display: inline-block;
+}
+
+.functionCall, .prompt {
+    font-weight: bold;
+}
+
+.doctestLine {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: monospace;
+    margin-bottom: 8px;
+}
+
+.prompt {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.inlineArg {
+    width: 70px;
+    margin: 0 3px;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 2px 4px;
+}
+
+.doctestLine {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: monospace;
+    font-size: 18px; /* Increased size */
+    margin-bottom: 10px;
+    gap: 4px;
+}
+
+.prompt {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.functionCall {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inlineArg {
+    width: 80px;
+    margin: 0 3px;
+    font-size: 16px;
+    font-family: monospace;
+    padding: 2px 5px;
+}
+
+.doctestHeader {
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.inlineArgInput {
+    width: 60px;
+    font-family: monospace;
+    font-size: 0.95rem;
+    margin: 0 2px;
+    padding: 2px 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.prompt {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.fnName {
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.inlineArgInput {
+    min-width: 30px;
+    width: auto;
+    max-width: 75px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    margin: 0 1px;
+    padding: 1px 2px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.inlineArgInput::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+.doctestRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between function name and input */
+    margin-bottom: 0.5rem;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    flex-grow: 1;
+}
+
+.doctestRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    flex-grow: 1;
+    max-width: 60%;
+}
+
+.doctestInline {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    flex-grow: 1;
+    max-width: 60%;
+    margin: 0 !important;
+}
+
+.doctestRow {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+/* Responsive styles */
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Heading */
+.heading h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Main layout */
+.mainContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Signature Container */
+.signatureContainer {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.sigLeftSection {
+    width: 200px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-right: 20px;
+}
+
+.sigRightSection {
+    flex: 1;
+}
+
+.functionName input,
+.returns input,
+.styledInput {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+/* Args and Returns Layout */
+.argsReturns {
+    display: flex;
+    gap: 40px;
+}
+
+.args, .returns {
+    flex: 1;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/* Scroll containers */
+.scrollar {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 5px 0;
+}
+
+/* Dropdowns */
+.styledDropdown {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 1rem;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+/* Doctests */
+.doctestBox {
+    background-color: #f1f1f1;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#doctestFunctionName {
+    display: inline-block;
+    font-family: monospace;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.doctestInput,
+.doctestOutput {
+    width: calc(100% - 20px);
+    margin: 5px 0;
+    padding: 8px;
+    font-family: monospace;
+}
+
+/* Buttons */
+.submitButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.leftButton,
+.rightButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.leftButton {
+    background-color: #4caf50;
+    color: white;
+}
+
+.leftButton:hover {
+    background-color: #45a045;
+}
+
+.rightButton {
+    background-color: #f44336;
+    color: white;
+}
+
+.rightButton:hover {
+    background-color: #d6362a;
+}
+
+.spacer {
+    height: 60px;
+}
+
+/* Dot container (empty placeholder) */
+.dot-container {
+    display: none;
+}
+
+#titleFunctionArguments,
+#docstring {
+    font-weight: bold;
+    font-size: 1em; /* optional: slightly larger */
+}
+
+
+/* Code area styles */
+
+input[type="text"], select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: #6366f1; /* soft blue */
+    outline: none;
+}
+
+.leftButton, .rightButton {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.leftButton {
+    background-color: #6366f1;
+    color: white;
+}
+
+.leftButton:hover {
+    background-color: #4f46e5;
+}
+
+.rightButton {
+    background-color: #f3f4f6;
+    color: #111;
+}
+
+.rightButton:hover {
+    background-color: #e5e7eb;
+}
+
+
+.mainContainer {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.signatureContainer, .doctest, .docstrings {
+    margin-bottom: 24px;
+}
+
+.doctestBox {
+    background: #f1f1f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.heading h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.doctestLine {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: monospace;
+}
+
+.inlineArg {
+    width: 60px;
+    display: inline-block;
+}
+
+.functionCall, .prompt {
+    font-weight: bold;
+}
+
+.doctestLine {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: monospace;
+    margin-bottom: 8px;
+}
+
+.prompt {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.inlineArg {
+    width: 70px;
+    margin: 0 3px;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 2px 4px;
+}
+
+.doctestLine {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: monospace;
+    font-size: 18px; /* Increased size */
+    margin-bottom: 10px;
+    gap: 4px;
+}
+
+.prompt {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.functionCall {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inlineArg {
+    width: 80px;
+    margin: 0 3px;
+    font-size: 16px;
+    font-family: monospace;
+    padding: 2px 5px;
+}
+
+.doctestHeader {
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.inlineArgInput {
+    width: 60px;
+    font-family: monospace;
+    font-size: 0.95rem;
+    margin: 0 2px;
+    padding: 2px 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.prompt {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.fnName {
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.inlineArgInput {
+    min-width: 30px;
+    width: auto;
+    max-width: 75px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    margin: 0 1px;
+    padding: 1px 2px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.inlineArgInput::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+.doctestRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between function name and input */
+    margin-bottom: 0.5rem;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    flex-grow: 1;
+}
+
+.doctestRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    flex-grow: 1;
+    max-width: 60%;
+}
+
+.doctestInline {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    flex-grow: 1;
+    max-width: 60%;
+    margin: 0 !important;
+}
+
+.doctestRow {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.doctestPrompt {
+    white-space: nowrap;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.doctestInputInline {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

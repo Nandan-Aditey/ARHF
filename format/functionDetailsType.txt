@@ -1,0 +1,15 @@
+{
+  "argument_1": "x: int",
+  "argument_2": "y: int",
+  "argument_3": "z: int",
+  "docstring": "adds three integers",
+  "doctest_1": "(1, 2, 3)",
+  "doctest_2": "(2, 3, 5)",
+  "function_name": "add_integers",
+  "number_of_arguments": "3",
+  "number_of_doctests": "2",
+  "number_of_return_types": "1",
+  "output_1": "6",
+  "output_2": "10",
+  "return_1": "int"
+}

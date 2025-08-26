@@ -1,0 +1,35 @@
+<!-- 
+Module Name: Final Code
+Purpose: HTML template for final code page (after refute)
+
+Date: 7 May 2025
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Function Code - ValiGen</title>
+    <link rel="stylesheet" href="/static/stylesFunctionCode.css">
+</head>
+<body>
+    <div class="dot-container"></div>
+    <div class="heading">
+        <h1>Your Function Code is Here</h1>
+    </div>
+    <div class="codeContainer">
+        <div class="containerHeader">
+            <div>Python</div>
+            <button class="copyButton" onclick="copyCode()">Copy Code</button>
+        </div>
+        <div class="codeArea" id="codeBlock"><p>{{function_code|e}}</p></div>
+    </div>
+    <form method="POST" action="/postFinalChoice" class="buttonContainer">
+        <input type="hidden" name="function_code" value="{{ function_code|e }}">
+    
+        <button type="submit" name="action" value="go_back" class="goBackButton">Go Back</button>
+    </form>      
+    <script src="/static/scriptFunctionCode.js"></script>
+</body>
+</html>

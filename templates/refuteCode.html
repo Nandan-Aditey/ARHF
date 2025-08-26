@@ -1,0 +1,89 @@
+<!-- 
+Module Name: Refute Code
+Purpose: User to confirm doctests to refute the function code
+
+Date: 6 May 2025
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Refute Doctests - ValiGen</title>
+        <link rel="stylesheet" href="/static/stylesSuggestedDoctests.css">
+    </head>
+    <body>
+        <div class="dot-container"></div>
+        <div class="heading">
+            <h1>Please confirm the doctests below</h1>
+        </div>
+        <form action="/refuteFunctionCode" method="post"> 
+            <div class="suggestedDoctestsContainer">
+                <div id="titleSuggestedDoctests">
+                    Suggested Doctests
+                </div>
+                {% for doctest in suggested_doctests %}
+                <div class="doctestShower">
+                    <div class="doctest">
+                        <span>>>> 
+                            {% if not is_tuple %}
+                                {{ function_name }}({{ doctest[0] }})
+                            {% else %}
+                                {{ function_name }}{{ doctest[0] }}
+                            {% endif %} <br>
+                        </span>
+                        <span>
+                            {% if doctest[1] == "" %}
+                                <br>
+                            {% else %}
+                                <span class="preserve-space">{{ doctest[1] }}</span>
+                            {% endif %}
+                        </span>
+                    </div>
+                    <div class="actionContainer">
+                        <label>
+                            <div class="acceptInput">
+                                <input type="radio" name="confirmation_{{ loop.index0 }}" value="accept" id="acceptRadio_{{ loop.index0 }}" onclick="toggleOutputField({{ loop.index0 }}, 'accept', 0)">
+                                <div class="titleAccept">Accept</div>
+                            </div>
+                        </label>
+                        <label>
+                            <div class="rejectInput">
+                                <input type="radio" name="confirmation_{{ loop.index0 }}" value="reject" id="rejectRadio_{{ loop.index0 }}" onclick="toggleOutputField({{ loop.index0 }}, 'reject', '')">
+                                <div class="titleReject">Reject</div>
+                            </div>
+                        </label>
+                        <div class="enterExpectedValue">
+                            <input type="text" class="rejectReason" id="rejectReason_{{ loop.index0 }}" placeholder="Enter expected return value" style="display: none;">
+                        </div>
+                        <input type="hidden" name="output_{{ loop.index0 }}" id="output_{{ loop.index0 }}" value="{{ loop.index0 }}">
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="submitButton">
+                    <input type="submit" value="Get your function code">
+                </div>
+            </div>
+        </form>
+        <div class="spacer"></div>
+
+        <script>
+        function toggleOutputField(index, action, defaultValue) {
+            const reasonField = document.getElementById(`rejectReason_${index}`);
+            const outputField = document.getElementById(`output_${index}`);
+
+            if (action === "reject") {
+                reasonField.style.display = "inline-block";
+                outputField.value = "";
+                reasonField.addEventListener("input", function () {
+                    outputField.value = reasonField.value;
+                });
+            } else {
+                reasonField.style.display = "none";
+                outputField.value = defaultValue;
+            }
+        }
+        </script>
+    </body>
+</html>

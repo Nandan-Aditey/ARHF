@@ -1,0 +1,14 @@
+{
+  "confirmation_0": "reject",
+  "confirmation_1": "accept",
+  "confirmation_2": "accept",
+  "confirmation_3": "reject",
+  "confirmation_4": "accept",
+  "output_0": "1",
+  "output_1": "",
+  "output_2": "",
+  "output_3": "10",
+  "output_4": ""
+}
+
+By default, we will ask the user to type "Error" in the corrected value, if the function is not supposed to take the input.
